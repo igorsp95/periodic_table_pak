@@ -48,30 +48,29 @@
 # 	end
 # end
 
-namespace :import do
-  desc 'Import periodic table data from json'
-  task :data, "data" => :environment do |t, args|
-    puts 'rails import:data[file_path] required' && return unless args["data"]
-    puts "Importing file #{args["data"]}"
+# namespace :import do
+#   desc 'Import periodic table data from json'
+#   task :data, [:file_name] => :environment do |t, args|
+#     puts 'rails import:data[file_path] required' && return unless args[:file_name]
+#     puts "Importing file #{args[:file_name]}"
 
-    file_name = args["data"]
-		file_folder  = Rails.root('db') 		# Step over the right folder
-		file = File.read(file_folder.join('data' + ".json"))		 	# Get the JSON file
+#     file_name = args[:file_name]
+# 		file_folder  = Rails.root('db')
+# 		file = File.read(file_folder.join(file_name + ".json"))
     
-    # TODO: Escreva o código para importar os dados aqui
-    # file_path = File.read("db/data.json")
-    elements = JSON.parse(open(file).read)
-    elements.each do |element|
-      element = Element.create!(
-        name: element['name'],
-        atomic_mass: element['atomic_mass'],
-        number: element['number'],
-        symbol: element['symbol']
-      )
-      puts "'#{element.name}' created!"
-    end
-  end
-end
+#     # TODO: Escreva o código para importar os dados aqui
+#     elements = JSON.parse(file)
+#     elements.each do |element|
+#       element = Element.create!(
+#         name: element['name'],
+#         atomic_mass: element['atomic_mass'],
+#         number: element['number'],
+#         symbol: element['symbol']
+#       )
+#       puts "'#{element.name}' created!"
+#     end
+#   end
+# end
 
 # namespace :import do
 #   desc 'Import periodic table data from json'
@@ -94,4 +93,21 @@ end
 #     end
 #   end
 # end
+
+namespace :import do
+  desc 'Import periodic table data from json'
+  task :data, :file, :environment do |_t, args|
+    puts 'rails import:data[file_path] required' && return unless args[:file]
+    puts "Importing file #{args[:file]}"
+
+    # TODO: Escreva o código para importar os dados aqui
+
+    filepath = Rails.root.join('db', "#{args[:file]}.json")
+    file = File.read(filepath)
+    contents = JSON.parse(file)
+    # contents.each do 
+
+    # p contents
+  end
+end
 
