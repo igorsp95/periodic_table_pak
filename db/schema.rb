@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_184153) do
+ActiveRecord::Schema.define(version: 2021_09_04_210142) do
 
   create_table "elements", force: :cascade do |t|
     t.string "name"
-    t.string "atomic_mass"
+    t.float "atomic_mass"
     t.integer "number"
     t.string "symbol"
     t.datetime "created_at", precision: 6, null: false

@@ -84,10 +84,10 @@
 #     elements = JSON.parse(open(file).read)
 #     elements.each do |element|
 #       element = Element.create!(
-#         name: element['name'],
-#         atomic_mass: element['atomic_mass'],
-#         number: element['number'],
-#         symbol: element['symbol']
+        # name: element['name'],
+        # atomic_mass: element['atomic_mass'],
+        # number: element['number'],
+        # symbol: element['symbol']
 #       )
 #       puts "'#{element.name}' created!"
 #     end
@@ -96,18 +96,27 @@
 
 namespace :import do
   desc 'Import periodic table data from json'
-  task :data, :file, :environment do |_t, args|
+  task :data, [:file] => :environment do |_t, args|
     puts 'rails import:data[file_path] required' && return unless args[:file]
     puts "Importing file #{args[:file]}"
 
     # TODO: Escreva o código para importar os dados aqui
-
+    
     filepath = Rails.root.join('db', "#{args[:file]}.json")
     file = File.read(filepath)
     contents = JSON.parse(file)
-    # contents.each do 
+    contents.each do |content|
+      # p content[1]['name']
+      content[1] = Element.create!(
+        name: content[1]['name'],
+        atomic_mass: content[1]['atomic_mass'],
+        number: content[1]['number'],
+        symbol: content[1]['symbol']
+      )
+      puts "'#{content[1].name}' created!"
+    end
 
-    # p contents
+    # p contents["hydrogen"]['number']
   end
 end
 
