@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <ul>
-    <% @elements["order"].each do |element| %>
+    <% @elements.each do |element| %>
       <li>
-        <%= @elements[element]["name"] %>
-        <%= @elements[element]["number"] %>-
-        <%= @elements[element]["period"] %>,
-        <%= @elements[element]["atomic_mass"] %>
+        <%= element.name %>
+        <%= element.number %>-
+        <%= element.atomic_mass %>,
+        <%= element.symbol %>
       </li>
     <% end %>
     </ul>

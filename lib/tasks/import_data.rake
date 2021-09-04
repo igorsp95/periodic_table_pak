@@ -105,8 +105,8 @@ namespace :import do
     filepath = Rails.root.join('db', "#{args[:file]}.json")
     file = File.read(filepath)
     contents = JSON.parse(file)
-    contents.each do |content|
-      # p content[1]['name']
+    contents.drop(1).each do |content|
+      # p content[1]
       content[1] = Element.create!(
         name: content[1]['name'],
         atomic_mass: content[1]['atomic_mass'],
