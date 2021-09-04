@@ -1,24 +1,24 @@
-namespace :import do
-  desc 'Import periodic table data from json'
-  task :data, ['db/data.json'] => :environment do |t, args|
-    file = File.read("db/data.json")
-    puts 'rails import:data[file_path] required' && return unless args[file]
-    puts "Importing file #{args[file]}"
+# namespace :import do
+#   desc 'Import periodic table data from json'
+#   task :data, ['db/data.json'] => :environment do |t, args|
+#     file = File.read("db/data.json")
+#     puts 'rails import:data[file_path] required' && return unless args[file]
+#     puts "Importing file #{args[file]}"
     
-    # TODO: Escreva o código para importar os dados aqui
+#     # TODO: Escreva o código para importar os dados aqui
 
-    elements = JSON.parse(open(file).read)
-    elements.each do |element|
-      element = Element.create!(
-        name: element['name'],
-        atomic_mass: element['atomic_mass'],
-        number: element['number'],
-        symbol: element['symbol']
-      )
-      puts "'#{element.name}' created!"
-    end
-  end
-end
+#     elements = JSON.parse(open(file).read)
+#     elements.each do |element|
+#       element = Element.create!(
+#         name: element['name'],
+#         atomic_mass: element['atomic_mass'],
+#         number: element['number'],
+#         symbol: element['symbol']
+#       )
+#       puts "'#{element.name}' created!"
+#     end
+#   end
+# end
 
 # namespace :import do
 # 	# Usage: rake json:set_fields[file_name]
@@ -48,6 +48,31 @@ end
 # 	end
 # end
 
+namespace :import do
+  desc 'Import periodic table data from json'
+  task :data, "data" => :environment do |t, args|
+    puts 'rails import:data[file_path] required' && return unless args["data"]
+    puts "Importing file #{args["data"]}"
+
+    file_name = args["data"]
+		file_folder  = Rails.root('db') 		# Step over the right folder
+		file = File.read(file_folder.join('data' + ".json"))		 	# Get the JSON file
+    
+    # TODO: Escreva o código para importar os dados aqui
+    # file_path = File.read("db/data.json")
+    elements = JSON.parse(open(file).read)
+    elements.each do |element|
+      element = Element.create!(
+        name: element['name'],
+        atomic_mass: element['atomic_mass'],
+        number: element['number'],
+        symbol: element['symbol']
+      )
+      puts "'#{element.name}' created!"
+    end
+  end
+end
+
 # namespace :import do
 #   desc 'Import periodic table data from json'
 #   task :data, file: :environment do |t, args|
@@ -56,7 +81,7 @@ end
 
     
 #     # TODO: Escreva o código para importar os dados aqui
-#     file = File.read("db/data.json")
+#     file_path = File.read("db/data.json")
 #     elements = JSON.parse(open(file).read)
 #     elements.each do |element|
 #       element = Element.create!(
