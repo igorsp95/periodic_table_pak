@@ -10,15 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_184153) do
+ActiveRecord::Schema.define(version: 2021_09_05_002217) do
 
   create_table "elements", force: :cascade do |t|
     t.string "name"
-    t.string "atomic_mass"
+    t.string "appearance"
+    t.float "atomic_mass"
+    t.integer "boil"
+    t.string "category"
+    t.float "density"
+    t.string "discovered_by"
+    t.integer "melt"
+    t.float "molar_heat"
     t.integer "number"
+    t.integer "period"
+    t.string "phase"
+    t.string "source"
+    t.text "summary"
     t.string "symbol"
+    t.integer "xpos"
+    t.integer "ypos"
+    t.text "electron_configuration"
+    t.string "electron_configuration_semantic"
+    t.float "electron_affinity"
+    t.float "electronegativity_pauling"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "shells"
+    t.float "ionization_energies"
   end
 
 end
