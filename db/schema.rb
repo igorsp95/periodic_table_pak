@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_09_05_002217) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "elements", force: :cascade do |t|
     t.string "name"
     t.string "appearance"
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 2021_09_05_002217) do
     t.float "electronegativity_pauling"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "shells"
-    t.float "ionization_energies"
+    t.integer "shells", default: [], array: true
+    t.float "ionization_energies", default: [], array: true
   end
 
 end

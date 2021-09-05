@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: "table#index"
+  root to: "welcome#index"
   resources :table, only: %i[index show]
 end
