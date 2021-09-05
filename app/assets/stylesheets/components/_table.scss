@@ -1,0 +1,9 @@
+.periodic-table{
+  display: grid;
+  grid-template-columns: repeat(18, 64px);
+  grid-template-rows: repeat(7, 65px);
+}
+
+.title{
+  color: red;
+}
