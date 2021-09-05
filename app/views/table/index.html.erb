@@ -1,60 +1,19 @@
-<div class="container">
-  <h1 class="title">asdasdsadsa</h1>
-  <div>
+<div class="text-center">
+  <h1 class="title">Tabela Periódica</h1>
+  <div class="d-flex justify-content-center">
     <div class="periodic-table">
-      <ul>
-      <% @elements["order"].each do |element| %>
-        <li>
-          <%= @elements[element]["name"] %>
-          <%= @elements[element]["number"] %>-
-          <%= @elements[element]["period"] %>,
-          <%= @elements[element]["atomic_mass"] %>
-        </li>
+      <% @elements.each do |element| %>
+            <div class="elements-<%= element.category.delete(',').delete(' ') %> elements" style="grid-column-start:<%= element.xpos %>; grid-row-start:<%= element.ypos %>;">
+              <%= link_to table_path(element), {:style=>'text-decoration: none;', :class => "link"} do %>
+                <div class="d-flex justify-content-between">
+                  <div class="element-small"><%= element.name %></div> 
+                  <div class="element-small"><%= element.number %></div>
+                </div>
+                <div class="element-big"><%= element.symbol %></div> 
+                <div class="element-small"><%= element.atomic_mass %></div>
+              <% end %>
+            </div>
       <% end %>
-      </ul>
     </div>
   </div>
 </div>
-
-<%# <table>
-  <tr>
-    <td>
-
-    </td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table> %>
-
-
-

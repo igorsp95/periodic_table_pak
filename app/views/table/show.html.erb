@@ -1,0 +1,61 @@
+<div class="container">
+  <h1 class="text-center title"><%= @element.name %></h1>
+  <table class="table table-bordered table-dark text-center">
+    <thead>
+      <tr>
+        <th scope="col">Atomic Mass</th>
+        <th scope="col">Boil</th>
+        <th scope="col">Category</th>
+        <th scope="col">Density</th>
+        <th scope="col">Discovered by</th>
+        <th scope="col">Melt</th>
+        <th scope="col">Molar Heat</th>
+        <th scope="col">Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @element.atomic_mass %></td>
+        <td><%= @element.boil == nil ? '-' : @element.boil %></td>
+        <td><%= @element.category %></td>
+        <td><%= @element.density %></td>
+        <td><%= @element.discovered_by %></td>
+        <td><%= @element.melt == nil ? '-' : @element.melt %></td>
+        <td><%= @element.molar_heat == nil ? '-' : @element.molar_heat %></td>
+        <td><%= @element.number %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered table-dark text-center">
+    <thead>
+      <tr>
+        <th scope="col">Phase</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Shells</th>
+        <th scope="col">Electron configuration</th>
+        <th scope="col">Electron Configuration Semantic</th>
+        <th scope="col">Electron Affinity</th>
+        <th scope="col">Electronegativity Pauling</th>
+        <th scope="col">Ionization Energies</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @element.phase %></td>
+        <td><%= @element.symbol %></td>
+        <td><%= @element.shells.kind_of?(Array) ? @element.shells.join(', ') : @element.shells %></td>
+        <td><%= @element.electron_configuration %></td>
+        <td><%= @element.electron_configuration_semantic %></td>
+        <td><%= @element.electron_affinity == nil ? '-' : @element.electron_affinity %></td>
+        <td><%= @element.electronegativity_pauling == nil ? '-' : @element.electronegativity_pauling %></td>
+        <td><%= @element.ionization_energies.kind_of?(Array) ? @element.ionization_energies.join(' - ') : '-' %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <p>Appearance: <%= @element.appearance %></p>
+    <p><a href="<%= @element.source %>" target="_blank"><p><%= @element.source %></p></a></p>
+    <p><%= @element.summary %></p>
+  </div>
+</div>

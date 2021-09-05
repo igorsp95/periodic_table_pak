@@ -1,9 +1,180 @@
-.periodic-table{
-  display: grid;
-  grid-template-columns: repeat(18, 64px);
-  grid-template-rows: repeat(7, 65px);
+.title{
+  margin-top: 16px;
+  margin-bottom: 32px;
 }
 
-.title{
-  color: red;
+.periodic-table{
+  display: grid;
+  grid-template-columns: repeat(18, 100px);
+  grid-template-rows: repeat(7, 100px);
+  margin-bottom: 32px;
+}
+
+.elements-diatomicnonmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #0f5f1a;
+}
+
+.elements-alkalimetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #a02626;
+}
+
+.elements-alkalineearthmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #a07526;
+}
+
+.elements-transitionmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #810000;
+}
+
+.elements-metalloid{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #165b77;
+}
+
+.elements-polyatomicnonmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #301677;
+}
+
+.elements-noblegas{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #9c2366;
+}
+
+.elements-post-transitionmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #238179;
+}
+
+.elements-actinide{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #003253;
+}
+
+.elements-unknownbutpredictedtobeanalkalimetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #1a1a1a;
+}
+
+.elements-unknownprobablytransitionmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #1a1a1a;
+}
+
+.elements-unknownprobablypost-transitionmetal{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #1a1a1a;
+}
+
+.elements-unknownpredictedtobenoblegas{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #1a1a1a;
+}
+
+.elements-unknownprobablymetalloid{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #1a1a1a;
+}
+
+.elements-lanthanide{
+  margin: 4px 4px;
+  // background-color: red;
+  padding: 8px 8px;
+  transition: 0.5s ease;
+  border: 1px solid rgb(240, 240, 240);
+  background-color: #442c58;
+}
+
+.elements:hover{
+  transform: scale(1.05);
+}
+
+.element-small{
+  font-size: 10px;
+}
+
+
+.element-big{
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.elements {
+  transition: 0.5s ease;
+}
+
+.elements:hover {
+  transform: scale(1.05);
 }
