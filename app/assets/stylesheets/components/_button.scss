@@ -1,0 +1,15 @@
+.button-transparent {
+  color: #e9e9e9;
+  border: 1px solid #e9e9e9;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.button-transparent:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #e9e9e9;
+}

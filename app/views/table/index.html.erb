@@ -1,19 +1,21 @@
 <div class="text-center">
-  <h1 class="title">Tabela Periódica</h1>
-  <div class="d-flex justify-content-center">
-    <div class="periodic-table">
-      <% @elements.each do |element| %>
-            <div class="elements-<%= element.category.delete(',').delete(' ') %> elements" style="grid-column-start:<%= element.xpos %>; grid-row-start:<%= element.ypos %>;">
-              <%= link_to table_path(element), {:style=>'text-decoration: none;', :class => "link"} do %>
-                <div class="d-flex justify-content-between">
-                  <div class="element-small"><%= element.name %></div> 
-                  <div class="element-small"><%= element.number %></div>
-                </div>
-                <div class="element-big"><%= element.symbol %></div> 
-                <div class="element-small"><%= element.atomic_mass %></div>
-              <% end %>
-            </div>
-      <% end %>
+  <div class="card-element">
+    <h1 class="title">Periodic Table</h1>
+    <div class="d-flex justify-content-center ">
+      <div class="periodic-table">
+        <% @elements.each do |element| %>
+              <div class="elements-<%= element.category.delete(',').delete(' ') %> elements" style="grid-column-start:<%= element.xpos %>; grid-row-start:<%= element.ypos %>;">
+                <%= link_to table_path(element), {:style=>'text-decoration: none;', :class => "link"} do %>
+                  <div class="d-flex justify-content-between">
+                    <div class="element-small"><%= element.name %></div> 
+                    <div class="element-small"><%= element.number %></div>
+                  </div>
+                  <div class="element-big"><%= element.symbol %></div> 
+                  <div class="element-small"><%= element.atomic_mass %></div>
+                <% end %>
+              </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
